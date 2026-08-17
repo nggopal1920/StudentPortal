@@ -1,0 +1,92 @@
+/* src/components/Footer.css */
+
+.footer-container {
+  background: #1e293b;
+  color: #ffffff;
+  padding: 30px 20px 15px 20px;
+  text-align: center;
+  margin-top: 200px;
+  border-top: 1px solid #334155;
+}
+
+#footer-logo {
+  color: orange;
+  margin-bottom: 8px;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.footer-content p {
+  color: #94a3b8;
+  margin-bottom: 20px;
+  font-size: 13px;
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #334155;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 17px;
+  transition: all 0.3s ease;
+}
+
+.footer-icons a:hover {
+  background-color: orange;
+  color: #1e293b;
+  transform: translateY(-3px);
+}
+
+.footer-bottom {
+  border-top: 1px solid #334155;
+  padding-top: 12px;
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE (Footer)
+   ========================================= */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    padding: 20px 15px 10px 15px;
+    margin-top: 340px;
+  }
+
+  #footer-logo {
+    font-size: 20px;
+  }
+
+  .footer-content p {
+    font-size: 12px;
+    margin-bottom: 15px;
+  }
+
+  .footer-icons {
+    gap: 12px;
+    margin-bottom: 15px;
+  }
+
+  .footer-icons a {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+  }
+
+  .footer-bottom {
+    font-size: 11px;
+    padding-top: 10px;
+  }
+}

@@ -1,0 +1,64 @@
+/* src/components/FilterRow.css */
+
+.filter-row-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 0px;
+  background-color: #03376b;
+     border: 1px solid #1e293b;
+  
+  width: 100%;
+  border-radius: 0px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  box-sizing: border-box;
+}
+
+.filter-col {
+  flex: 1; /* Sabhi 4 columns barabar width lenge */
+  display: flex;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.filter-col label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #d6dee9;
+}
+
+.filter-select {
+
+  width: 100%;
+  height: 38px;
+  padding: 0 0px;
+  border: 1px solid #0a63cf;
+  border-radius: 0px;
+  background-color: #03376b;
+  color: #e7e8eb;
+  font-size: 14px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease;
+}
+
+.filter-select:focus {
+  border-color: #f97316;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE (Filter Row)
+   ========================================= */
+
+@media screen and (max-width: 768px) {
+  .filter-row-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0px;
+    padding: 0px;
+    margin: 0px 0;
+    border-radius: 0; /* Mobile par poori width lene ke liye */
+  }
+  .filter-col {
+    height: 25px;
+  }
+}

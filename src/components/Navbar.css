@@ -1,0 +1,129 @@
+/* src/components/Navbar.css */
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background: #1e293b;
+  color: #ffffff;
+  padding: 0 30px;
+  box-sizing: border-box;
+  height: 70px; /* Height kam kar di gayi hai */
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.navbar-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#logo {
+  font-size: 24px;
+  font-weight: 700;
+  color: orange;
+  margin: 0;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 10px;
+  margin: 0px;
+  padding: 0;
+}
+
+.menu {
+  margin-left: 100px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 15px;
+  transition: color 0.3s ease;
+}
+
+.menu:hover {
+  color: #38bdf8;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+#search {
+  background-color: #ffffff;
+  color: #000;
+  border: none;
+  height: 32px;
+  padding: 0 10px;
+  border-radius: 4px;
+  outline: none;
+  margin-left: 40px;
+}
+
+#button {
+  background-color: orange;
+  color: white;
+  border: none;
+  height: 32px;
+  padding: 0 12px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+/* Default desktop par three lines hidden rahegi */
+.menu-icon {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: white;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE (Navbar)
+   ========================================= */
+@media screen and (max-width: 768px) {
+  .navbar-container {
+    flex-direction: column;
+    height: auto;
+    padding: 12px 20px;
+  }
+
+  .menu-icon {
+    display: block; /* Phone par three lines dikhengi */
+  }
+
+  .nav-menu {
+    display: none; /* Default me menu chhupa rahega */
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #334155;
+    margin-top: 10px;
+  }
+
+  /* Jab click hone par 'active' class lagegi tab menu dikhega */
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .search-box {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #search, #button {
+    width: 100%;
+  }
+}
