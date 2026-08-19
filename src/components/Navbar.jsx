@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Navbar.css';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
-  // Menu kholne aur band karne ke liye state
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -20,17 +20,12 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Menu items aur search bar (Phone par yeh toggle honge) */}
+      {/* Menu items */}
       <ul className={`nav-menu ${isOpen ? "active" : ""}`}>
-        <li className="menu">Home</li>
-        <li className="menu">Notes</li>
-        <li className="menu">Placement</li>
-        <li className="menu">Login</li>
-        
-        <div className="search-box">
-          <input type="search" placeholder="Search..." id="search" />
-          <button id="button">Search</button>
-        </div>
+        <li className="menu"><Link to="/Gallery" onClick={() => setIsOpen(false)}>Gallery</Link></li>
+        <li className="menu"><Link to="/" onClick={() => setIsOpen(false)}>Home</Link></li>
+        <li className="menu"><Link to="/notes" onClick={() => setIsOpen(false)}>Notes</Link></li>
+        <li className="menu"><Link to="/login" onClick={() => setIsOpen(false)}>Login</Link></li>
       </ul>
     </nav>
   );
