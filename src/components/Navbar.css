@@ -72,15 +72,23 @@
 MOBILE RESPONSIVE (Navbar) - Smooth Flow & Half Screen
    ========================================= */
 @media screen and (max-width: 768px) {
-    .navbar-container {
-        flex-direction: row; /* Logo aur icon ek hi line mein rahenge */
-        justify-content: space-between;
-        align-items: center;
-        height: 70px;
-        padding: 0 20px;
-        position: sticky;
-        top: 0;
-    }
+   .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100vw; /* Poori screen ki width */
+    margin: 0;
+    left: 0;
+    right: 0;
+    background: #1e293b;
+    color: #ffffff;
+    padding: 0 20px;
+    box-sizing: border-box;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
 
     /* .navbar-top {
         width: 100%;
