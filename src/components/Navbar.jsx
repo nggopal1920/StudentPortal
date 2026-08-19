@@ -12,7 +12,7 @@ const Navbar = () => {
   return (
     <nav className="navbar-container">
       <div className="navbar-top">
-        <h2 id="logo">StudentPortal</h2>
+        <h2 id="logo">MG Portal</h2>
         
         {/* Mobile ke liye Three Lines (Hamburger) Icon */}
         <div className="menu-icon" onClick={toggleMenu}>
