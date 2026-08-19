@@ -1,0 +1,159 @@
+/* Poori gallery ka container jisse ye navbar/screen ki width ke andar rahe */
+.gallery-container {
+    width: 100%;
+    max-width: 1200px; /* Navbar ya page ki maximum width ke mutabiq */
+    margin: 0 auto;
+    padding: 15px;
+    box-sizing: border-box; /* Padding ki wajah se box bahar na nikle */
+}
+
+/* Grid jo phone aur laptop dono par automatically adjust hogi */
+.gallery-grid {
+    display: flex;
+    flex-wrap: wrap;       /* Line poori hote hi photos agli line mein aa jayengi */
+    gap: 15px;             /* Photos ke beech ka gap */
+    justify-content: center; /* Mobile aur desktop dono par center mein rahega */
+}
+
+/* Har ek photo ka chota box */
+.gallery-card {
+    width: 160px;          /* Box ki fixed width */
+    max-width: 100%;       /* Phone ki screen choti hone par box screen se bahar nahi jayega */
+    height: 100px;          /* Box ki height */
+    background: #fff;
+    border: 1px solid black;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(8, 255, 234, 0.788);
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+.gallery-card:hover {
+    transform: scale(1.03);
+}
+
+/* Image box ke andar fit rahe */
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;     /* Image kharab nahi hogi, box mein fit ho jayegi */
+}
+
+/* Full-Screen Modal (Yeh user ki current scroll position par hi khulega) */
+.modal {
+    position: fixed; /* Poori screen par fix rahega taaki scroll na karna pade */
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95); /* Modal background ko dark kar diya */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Sabse upar dikhega */
+}
+
+/* Full screen wali image ka size */
+.modal-img {
+    object-fit: contain; 
+    max-width: 90vw;  /* Screen ki width ka 90% */
+    max-height: 90vh; /* Screen ki height ka 90% */
+    border-radius: 8px;
+    filter: drop-shadow(0 4px 10px rgba(0,0,0,0.5)); 
+}
+
+/* Cross (X) Button ka design jo screen par fix rahega */
+.close-btn {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10000;
+    background: rgba(0, 0, 0, 0.6);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+.close-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* --- LOGIN PAGE STYLING --- */
+.login-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70vh; /* Page ke beech mein dikhega */
+    padding: 20px;
+}
+
+.login-box {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    width: 100%;
+    max-width: 380px;
+    border: 1px solid #e0e0e0;
+}
+
+.login-box h2 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 24px;
+}
+
+.login-box p {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.login-input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    outline: none;
+    box-sizing: border-box;
+    margin-bottom: 15px;
+    transition: border-color 0.3s;
+}
+
+.login-input:focus {
+    border-color: #08ffee; /* Focus hone par stylish border */
+}
+
+.login-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-btn:hover {
+    background-color: #0056b3;
+}
+
+.error-text {
+    color: #ff3333 !important;
+    font-size: 14px;
+    margin-top: 12px !important;
+    font-weight: 500;
+}
