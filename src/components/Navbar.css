@@ -1,129 +1,129 @@
 /* src/components/Navbar.css */
 
 .navbar-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  background: #1e293b;
-  color: #ffffff;
-  padding: 0 30px;
-  box-sizing: border-box;
-  height: 70px; /* Height kam kar di gayi hai */
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    background: #1e293b;
+    color: #ffffff;
+    padding: 0 30px;
+    box-sizing: border-box;
+    height: 70px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
 }
 
 .navbar-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
 }
 
 #logo {
-  font-size: 24px;
-  font-weight: 700;
-  color: orange;
-  margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: orange;
+    margin: 0;
 }
 
 .nav-menu {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 10px;
-  margin: 0px;
-  padding: 0;
+    display: flex;
+    align-items: center;
+    list-style: none;
+    gap: 25px;
+    margin: 0px;
+    padding: 0;
 }
 
 .menu {
-  margin-left: 100px;
-  cursor: pointer;
-  font-weight: 500;
-  font-size: 15px;
-  transition: color 0.3s ease;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 15px;
+    transition: color 0.3s ease;
 }
 
 .menu:hover {
-  color: #38bdf8;
+    color: #38bdf8;
 }
 
-.search-box {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+.menu a {
+    color: white;
+    text-decoration: none;
+    display: block;
 }
 
-#search {
-  background-color: #ffffff;
-  color: #000;
-  border: none;
-  height: 32px;
-  padding: 0 10px;
-  border-radius: 4px;
-  outline: none;
-  margin-left: 40px;
-}
-
-#button {
-  background-color: orange;
-  color: white;
-  border: none;
-  height: 32px;
-  padding: 0 12px;
-  cursor: pointer;
-  border-radius: 4px;
-  font-weight: 600;
+.menu a:hover {
+    color: red;
 }
 
 /* Default desktop par three lines hidden rahegi */
 .menu-icon {
-  display: none;
-  font-size: 24px;
-  cursor: pointer;
-  color: white;
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
 }
 
 /* =========================================
-   MOBILE RESPONSIVE (Navbar)
+MOBILE RESPONSIVE (Navbar) - Smooth Flow & Half Screen
    ========================================= */
 @media screen and (max-width: 768px) {
-  .navbar-container {
-    flex-direction: column;
-    height: auto;
-    padding: 12px 20px;
-  }
+    .navbar-container {
+        flex-direction: row; /* Logo aur icon ek hi line mein rahenge */
+        justify-content: space-between;
+        align-items: center;
+        height: 70px;
+        padding: 0 20px;
+        position: sticky;
+        top: 0;
+    }
 
-  .menu-icon {
-    display: block; /* Phone par three lines dikhengi */
-  }
+    /* .navbar-top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    } */
 
-  .nav-menu {
-    display: none; /* Default me menu chhupa rahega */
-    flex-direction: column;
-    width: 100%;
-    align-items: center;
-    gap: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #334155;
-    margin-top: 10px;
-  }
+    .menu-icon {
+        display: block;
+        z-index: 1100; /* Icon hamesha upar dikhega */
+    }
 
-  /* Jab click hone par 'active' class lagegi tab menu dikhega */
-  .nav-menu.active {
-    display: flex;
-  }
+    /* Menu ab poori screen nahi, balki right side se aadhe (55%) hisse mein khulega aur smooth flow mein aayega */
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: -100%; /* Shuru mein screen ke bahar chhipa rahega */
+        width: 60%;  /* Screen ka sirf aadha/thoda sa hissa gherega */
+        height: 60vh;
+        background: #1e293b;
+        padding-top: 80px; /* Upar logo/icon ke liye jagah */
+        padding-left: 20px;
+        padding-right: 20px;
+        box-sizing: border-box;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.5);
+        align-items: flex-start;
+        gap: 20px;
+        transition: right 0.3s ease-in-out; /* Smooth sliding animation */
+        z-index: 1000;
+    }
 
-  .search-box {
-    width: 100%;
-    flex-direction: column;
-    gap: 10px;
-  }
+    /* Jab click karne par 'active' hoga, toh ye slide hokar aaram se bahar niklega */
+    .nav-menu.active {
+        right: 0; 
+    }
 
-  #search, #button {
-    width: 100%;
-  }
+    .menu {
+        font-size: 17px;
+        width: 100%;
+        padding: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
 }
