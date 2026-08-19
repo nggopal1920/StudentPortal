@@ -5,6 +5,7 @@ import FilterRow from './components/FilterRow';
 import Home from './components/Home';
 import BtechPage from './components/BtechPage'; // B.Tech wali file
 import Footer from './components/Footer';
+import Gallery from './components/Gallery';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         {/* Beech ka content yahan routes ke hisab se badlega */}
         <div className="main-content">
           <Routes>
+            <Route path="/Gallery" element={<Gallery/>} />
             <Route path="/" element={<Home />} />
             <Route path="/btech" element={<BtechPage />} />
           </Routes>
